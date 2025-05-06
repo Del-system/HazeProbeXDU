@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: haze-probe-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/haze_probe_service
+    username: root
+    password: zk040802
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug

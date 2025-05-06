@@ -1,0 +1,101 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blackground">
+
+    <!--温度显示-->
+    <TextView
+        android:id="@+id/tv_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="--℃"
+        android:textColor="@android:color/white"
+        android:textSize="72sp"
+        android:textStyle="bold" />
+
+    <!--天气显示-->
+    <TextView
+        android:id="@+id/tv_weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_temp"
+        android:gravity="center_horizontal"
+        android:text="获取中..."
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <!--定位显示-->
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_weather"
+        android:layout_centerHorizontal="true"
+        android:text="定位中..."
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/aq_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_location"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#80000000">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="空气质量"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_marginTop="2sp" />
+
+        <TextView
+            android:id="@+id/tv_aqi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="污染指数: --"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_pm25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PM2.5: --"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_pm10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PM10: --"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/aq_layout"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:text="获取定位"/>
+</RelativeLayout>
